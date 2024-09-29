@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container red bg-green">
+        <div class="box" style="display: flex;" data-createdby="harry" data-conceptby="rohan">Hey I am a box</div>
+        <div class="box">Hey I am a box</div>
+
+    </div>
+</body>
+
+
+<script>
+    Document.querySelector(".box")
+    Document.querySelector(".box").innerHTML
+    Document.querySelector(".box").remove   //remove box
+    Document.querySelector(".container").innerHTML
+    Document.querySelector(".container").outerHTML
+    Document.querySelector(".container").innerText
+
+    Document.querySelector(".container").tagName    //for elemenets only
+    Document.querySelector(".container").nodeName     //coment,text,elements name
+    Document.querySelector(".container").textContent      //texts
+    Document.querySelector(".container").hidden          //true/ false
+    Document.querySelector(".container").hidden = true     //it will hide container
+    Document.querySelector(".container").innerHTML = "hey im isha"
+    Document.querySelector(".box").hasAttribute("style")
+    Document.querySelector(".box").getAttribute("style")
+    Document.querySelector(".box").setAttribute("style", "display:inline")
+    Document.querySelector(".box").attribute   //shows all attribute
+
+    document.designMode = "on"      // can do any change in any website
+    let div = document.createElement("div");
+    div.innerHTML = "I have been inserted <b>by harry</b>"
+    div.setAttribute("class", "created");
+    document.querySelector(".container").append(div);   //inside div at first
+    document.querySelector(".container").prepend(div);   //inside dive at last
+
+    document.querySelector(".container").before(div);    //outside div before div
+    document.querySelector(".container").after(div);     //outside div after div
+    document.querySelector(".container").replaceWith(div);
+
+
+    let cont = document.querySelector(".container")
+    cont.insertAdjacentHTML("beforebegin", "<b> I am under water  </b>")  //outside div before div
+    cont.insertAdjacentHTML("beforebegin", "<b> I am under water  </b>")   //outside div after div
+    cont.classList
+    cont.className
+    cont.classList.add("harry")
+    cont.classList.remove("harry")
+    cont.classList.add("red")   //multiple time cant add the same class .red
+    cont.classList.remove("red")
+    cont.classList.toggle("red")  // if its on it will hide the class ,if its off then it will on
+    
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* by default position is static(it dont allows top, bottom, left, right effects) */
+        /* position: sticky;  it will stick to the top */
+        .box {
+            height: 233px;
+            width: 80vw;
+            padding: 3px;
+            margin: 3px;
+            border: 2px solid black;
+        }
+
+        .box1 {
+            background-color: aqua;
+            /* if position:absoluute then it search for its nearest ancestor's positioned or not .if yes it move relative to it.if not then move relative to html tag */
+            /* position: absolute;
+            top: 30px;
+            left: 14px; */
+            /* height: 111px;
+            width:100%; */
+            /* margin: 0;
+            padding: 0; */
+
+        }
+
+        /* relative= can move the box top or bootom ,with out effecting other boxes */
+         .box2 {
+            background-color: azure;
+            /* position: relative; */
+            /* top: 0px;
+            left: 34px; */
+            /* z-index: -1; */
+            /* it move this box underneath   */
+        } 
+        
+        .box3 {
+            background-color: antiquewhite;
+            /* it will fixed at its spot even if you scroll, it fix at buttom of page  */
+             position: fixed;
+            bottom: 0px;
+            left:8vw;
+            height: 111px; 
+        }
+
+        .box4 {
+            background-color: purple;
+        }
+
+
+
+        .parent {
+            padding: 43px;
+            margin: 34px;
+            border: 3px solid purple;
+            position: absolute;
+        /* Exception: transform, filter, or perspective properties can also make an element appear as positioned */
+            /*   transform: translate(0);    */
+            /*   filter: invert(0);         */
+            /*   perspective: 0em;         */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+    </div>
+</body>
+
+</html>

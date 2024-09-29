@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMS IN HTML</title>
+    <link rel="stylesheet" href="form1.css"
+</head>
+
+<body>
+    <H1>FORM TO APPLY FOR SIGMA WEB DEVELOPMENT course</H1>
+    <form action="post">
+       <div> 
+        <label for="username" required > Enter your username: </label>
+        <input type="text" id="UN" name="username" placeholder="enter your user name" autofocus>
+    </div>
+        <div>
+            <input type="radio" id="m" name="gender" value="Male"> <!--in radio buttons, name is always same  -->
+            <label for="m">Male</label> <!--for= id of input-->
+            <input type="radio" id="f" name="gender" value="Female">
+            <label for="f">Female</label>
+        </div>
+        <div>
+            <input type="checkbox" id="subscribe" name="subscribe" value="Yes">
+            <label for="subscribe">Subscribe to CodeWithHarry</label>
+        </div>
+        <div>
+            <level for="coment">Enter your comments here:</level> <br>
+            <textarea id=coment name="coment" rows="5" cols="30">Enter your comments here</textarea>
+        </div>
+        <div>
+            <select name="fruits">
+                <option value="apple">Apple</option>
+                <option value="bannana">Banana</option>
+                <option value="orange"> Orange</option>
+            </select>
+        </div>
+        <p>block element-p</p>
+        <a href="https://google.com">google</a>
+        <div>block element-div</div>
+        <a href="">a is inline element</a>
+        <span>span is a inline element</span>
+
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1) even if the function is waiting/pending still rest of code will execute.this is a benifit iod async js
+        //2)or use then/await 
+        async function getData() {
+            // Simulate/imitate async operation that gets data from a server-=promise,then
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(455)
+                }, 3500);                //will apear after 3.5 sec
+            })
+        }
+       // 2)then()=  callback inside then() executes automatically once the Promise is fulfilled(i.e., resolve() is called) .
+       let data = getData()
+            data.then((rv) => {         //then() only specify what to do after a promise resolves
+                console.log(data)   //returns promise object only
+                console.log(rv)       //returns resulved value of promise=455
+                console.log("process data")
+                console.log("task 2")
+            })
+        
+
+    //async() = used to
+    //use promise-await intead of useing .then()
+    //3)await must need to be inside async(for now assume)
+    /*
+       //wrap codes in the main()
+        async function main() {
+
+            console.log("Loading modules")
+            console.log("Do something else")
+            console.log("Load data")
+
+            let data = await getData()      //means only after getdata() executes ,rest of code will execute
+            console.log(data)
+            console.log("process data")
+            console.log("task 2")
+
+        }
+
+        // main()       //call main function
+    */
+
+
+    /* 4)use API to get data
+        async function getData() {
+            // Simulate getting data from a server
+            // let x = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+
+               let data= await x.json()     //waits until data(from api) convert in json(js object)
+               let data= await x.text()     //waits until data convert in text(string)
+               console.log(data)
+
+               //get the post request from json placeholder guide
+            let x = await fetch('https://jsonplaceholder.typicode.com/posts',{
+                    method: 'POST',
+                    body: JSON.stringify({
+                        title: 'foo',
+                        body: 'bar',
+                        userId: 1,
+                    }),
+                    headers: {
+                        'Content-type': 'application/json; charset=UTF-8',
+                    },
+            })
+            let data = await x.json()
+            return data
+        }
+       
+    */
+      //getrequest= like getting notes from google/click/enter url
+      //postrequest=  like submit/login sume form in a web page
+    </script>
+
+</body>
+
+</html>

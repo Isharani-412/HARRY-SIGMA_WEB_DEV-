@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        console.log('This is Promises');
+
+        let prom1 = new Promise((resolve, reject) => {
+            //create a random no and if <5 then reject
+            let a = Math.random();
+            if (a < 0.5) {
+                reject("No random number was not supporting you")
+            }
+            else {
+                setTimeout(() => {
+                    console.log("Yes I am done")
+                    resolve("Harry")
+                }, 3000);
+            }
+        })
+        //if prom1-resolve then->then it gives a error
+        prom1.then((a) => {
+          console.log(a)
+        })
+        
+
+        let prom2 = new Promise((resolve, reject) => {
+            let a = Math.random();
+            if (a < 0.5) {
+                reject("No random number was not supporting you 2")
+            }
+            else {
+                setTimeout(() => {
+                    console.log("Yes I am done 2")
+                    resolve("Harry 2")
+                }, 1000);
+            }
+        })
+        //resolve= return with out error
+        //settle=either resolve or reject,can accept error
+
+        // settle means resolve or reject
+        // resolve means promise has settled successfully
+        // reject means promise has not settled successfully
+
+    
+        //let p4 = Promise.allSettled([prom1, prom2])
+        //let p4 = Promise.all([prom1, prom2])     //only if all promises are resolved with out error
+        let p3 = Promise.race([prom1, prom2])
+
+        //it wont give a error cause it will catch it
+        p3.then((a) => {
+            console.log(a)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+
+        //resolve= return with out error
+        //settle=either resolve or reject,can accept error
+    </script>
+</body>
+
+</html>

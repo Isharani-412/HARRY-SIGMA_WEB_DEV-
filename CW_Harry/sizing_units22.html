@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* html=root element */
+        .html{  
+            font-size: 12px;
+        }
+
+        .box {
+            border: 2px solid black;
+            background-color: aquamarine;
+            /* width: 1536px; */
+            box-sizing: border-box;
+            width: 80vw;
+            /*80% of the whole screen */
+            margin: auto;
+            /*make it center */
+        }
+
+        .container {
+            border: 2px solid black;
+            background-color: aquamarine;
+            /* width: 1536px; */
+            box-sizing: border-box;
+            width: 80vw;
+            height: 80vh;
+            margin: 23px auto;
+            font-size: 18px;
+
+         } 
+         /* 2em=gives twice big of inherited font-size(container) */     
+         /* 2em=2*18px=32px  (if no fontsize inheritedthen defauly=16px*2) */
+         /* 4rem= 4* font size of root element(html) */
+        .container p{               
+             /* font-size: 2em; */
+              font-size: 4rem;     
+        }                           
+        
+    </style>
+</head>
+
+<body>
+    <span class="box"> <!-- in inline element(span) width, margin: auto like attributr can't be applied -->
+        this is is box
+    </span><br><br>
+
+    <div class="box">this is is box</div>
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores veritatis corporis
+        voluptatibus vel. Numquam labore nisi maiores! Distinctio ullam at quo quos harum! Recusandae nisi
+        reprehenderit, vero ipsam modi vel! Veniam enim tempora blanditiis!</div>
+        </p>
+
+</body>
+
+</html>
